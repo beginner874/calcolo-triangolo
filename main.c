@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include <math.h>
 int control (float L[]) {
     if ((L[0]+L[1]>L[2])&&(L[0]+L[2]>L[1])&&(L[1]+L[2]>L[0])) {
         return 1;
@@ -10,6 +10,7 @@ int control (float L[]) {
 }
 int main () {
     float L [] = {0,0,0};
+    float A [] = {0,0,0};
     float perimetro;
     for (int i=1;i<4;i++) {
         printf("inserisci i dati del triangolo\n");
@@ -30,6 +31,12 @@ int main () {
         }
     }
     if (control(L)) {
+        A[0]=acos( ( pow(L[1],2) + pow(L[2],2) - pow(L[0],2) ) / (2*L[1]*L[2]) );
+        A[1]=acos( ( pow(L[0],2) + pow(L[2],2) - pow(L[1],2) ) / (2*L[0]*L[2]) );
+        A[2]=acos( ( pow(L[0],2) + pow(L[1],2) - pow(L[2],2) ) / (2*L[0]*L[1]) );
+        printf("%.3f\n",A[0]);
+        printf("%.3f\n",A[1]);
+        printf("%.3f\n",A[2]);
         perimetro=L[0]+L[1]+L[2];
         printf("%.3f\n",perimetro);
     }
