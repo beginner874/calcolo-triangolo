@@ -38,11 +38,13 @@ int main () {
         A[0]=A[0]*180/3.1415926;
         A[1]=A[1]*180/3.1415926;
         A[2]=A[2]*180/3.1415926;
+        perimetro=L[0]+L[1]+L[2];
+        area=(L[0]*L[1]*A[0])/2
         printf("angolo alfa è: %.3f\n",A[0]);
         printf("angolo beta è: %.3f\n",A[1]);
         printf("angolo gamma è: %.3f\n",A[2]);
-        perimetro=L[0]+L[1]+L[2];
         printf("il perimetro del triangolo è: %.3f\n",perimetro);
+        printf("l'area del triangolo è: %.3f\n",area);
 
     }
     return 0;
