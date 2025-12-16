@@ -12,6 +12,7 @@ int main () {
     float L [] = {0,0,0};
     float A [] = {0,0,0};
     float perimetro;
+    float area;
     for (int i=1;i<4;i++) {
         printf("inserisci i dati del triangolo\n");
         printf("segmento AB\n");
@@ -34,11 +35,15 @@ int main () {
         A[0]=acos( ( pow(L[1],2) + pow(L[2],2) - pow(L[0],2) ) / (2*L[1]*L[2]) );
         A[1]=acos( ( pow(L[0],2) + pow(L[2],2) - pow(L[1],2) ) / (2*L[0]*L[2]) );
         A[2]=acos( ( pow(L[0],2) + pow(L[1],2) - pow(L[2],2) ) / (2*L[0]*L[1]) );
-        printf("%.3f\n",A[0]);
-        printf("%.3f\n",A[1]);
-        printf("%.3f\n",A[2]);
+        A[0]=A[0]*180/3.1415926;
+        A[1]=A[1]*180/3.1415926;
+        A[2]=A[2]*180/3.1415926;
+        printf("angolo alfa è: %.3f\n",A[0]);
+        printf("angolo beta è: %.3f\n",A[1]);
+        printf("angolo gamma è: %.3f\n",A[2]);
         perimetro=L[0]+L[1]+L[2];
-        printf("%.3f\n",perimetro);
+        printf("il perimetro del triangolo è: %.3f\n",perimetro);
+
     }
     return 0;
 }
