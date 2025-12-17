@@ -35,17 +35,16 @@ int main () {
         A[0]=acos( ( pow(L[1],2) + pow(L[2],2) - pow(L[0],2) ) / (2*L[1]*L[2]) );
         A[1]=acos( ( pow(L[0],2) + pow(L[2],2) - pow(L[1],2) ) / (2*L[0]*L[2]) );
         A[2]=acos( ( pow(L[0],2) + pow(L[1],2) - pow(L[2],2) ) / (2*L[0]*L[1]) );
+        area=(L[0]*L[1]*A[0])/2;
         A[0]=A[0]*180/3.1415926;
         A[1]=A[1]*180/3.1415926;
         A[2]=A[2]*180/3.1415926;
         perimetro=L[0]+L[1]+L[2];
-        area=(L[0]*L[1]*A[0])/2;
-        else if (A[0]==A[1]||A[0]==A[2]||A[1]==A[2]) {
+        if (A[0]==A[1]||A[0]==A[2]||A[1]==A[2]) {
             printf("è un triangolo isoscele\n");
             if (A[0]==90||A[1]==90||A[2]==90) {
-            printf("è anche un triangolo rettangolo\n");
-            
-        }
+                printf("è anche un triangolo rettangolo\n");
+            }
         }
         else if (A[0]==A[1]&&A[0]==A[2]&&A[1]==A[2]) {
             printf("è un triangolo equilatero\n");
@@ -53,8 +52,8 @@ int main () {
         else {
             printf("è un triangolo scaleno\n");
             if (A[0]==90||A[1]==90||A[2]==90) {
-            printf("è anche un triangolo rettangolo\n");
-        }
+                printf("è anche un triangolo rettangolo\n");
+            }
         }
         printf("angolo alfa è: %.3f\n",A[0]);
         printf("angolo beta è: %.3f\n",A[1]);
