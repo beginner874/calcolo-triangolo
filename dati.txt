@@ -1,8 +1,8 @@
-primo lato: 10.000000
-secondo lato : 5.000000
-terzo lato : 8.000000
-primo angolo : 97.903206
-secondo angolo : 29.686295
-terzo angolo : 52.410500
-perimetro : 23.000000
-area : 19.810036
+segmento AB: 10.000000
+segmanto BC : 10.000000
+segmanto CA : 10.000000
+angolo alfa : 60.000000
+angolo beta : 60.000000
+angolo gamma: 60.000000
+perimetro : 30.000000
+area : 43.301270

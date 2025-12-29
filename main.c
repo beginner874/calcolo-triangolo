@@ -63,13 +63,14 @@ int main () {
         printf("l'area del triangolo è: %.3f\n",area);
     }
     file = fopen("dati.txt", "w");
-    fprintf(file, "primo lato: %f\n",L[0]);
-    fprintf(file, "secondo lato : %f\n",L[1]);
-    fprintf(file, "terzo lato : %f\n",L[2]);
-    fprintf(file, "primo angolo : %f\n",A[0]);
-    fprintf(file, "secondo angolo : %f\n",A[1]);
-    fprintf(file, "terzo angolo : %f\n",A[2]);
+    fprintf(file, "segmento AB: %f\n",L[0]);
+    fprintf(file, "segmanto BC : %f\n",L[1]);
+    fprintf(file, "segmanto CA : %f\n",L[2]);
+    fprintf(file, "angolo alfa : %f\n",A[0]);
+    fprintf(file, "angolo beta : %f\n",A[1]);
+    fprintf(file, "angolo gamma: %f\n",A[2]);
     fprintf(file, "perimetro : %f\n",perimetro);
     fprintf(file, "area : %f\n",area);
+    printf("dati salvati su file\n");
     return 0;
 }
