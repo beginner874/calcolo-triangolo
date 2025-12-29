@@ -9,6 +9,7 @@ int control (float L[]) {
     }
 }
 int main () {
+    FILE *file;
     float L [] = {0,0,0};
     float A [] = {0,0,0};
     float perimetro;
@@ -60,7 +61,15 @@ int main () {
         printf("angolo gamma è: %.3f\n",A[2]);
         printf("il perimetro del triangolo è: %.3f\n",perimetro);
         printf("l'area del triangolo è: %.3f\n",area);
-
     }
+    file = fopen("dati.txt", "w");
+    fprintf(file, "primo lato: %f\n",L[0]);
+    fprintf(file, "secondo lato : %f\n",L[1]);
+    fprintf(file, "terzo lato : %f\n",L[2]);
+    fprintf(file, "primo angolo : %f\n",A[0]);
+    fprintf(file, "secondo angolo : %f\n",A[1]);
+    fprintf(file, "terzo angolo : %f\n",A[2]);
+    fprintf(file, "perimetro : %f\n",perimetro);
+    fprintf(file, "area : %f\n",area);
     return 0;
 }
