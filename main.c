@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 int control (float L[]) {
-    if ((L[0]+L[1]>L[2])&&(L[0]+L[2]>L[1])&&(L[1]+L[2]>L[0])) {
+    if ((L[0]+L[1]>L[2])&&(L[0]+L[2]>L[1])&&(L[1]+L[2]>L[0])&&(L[0]!=0)&&(L[1]!=0)&&(L[2]!=0)) {
         return 1;
     }
     else {
@@ -63,14 +63,14 @@ int main () {
         printf("l'area del triangolo è: %.3f\n",area);
     }
     file = fopen("dati.txt", "w");
-    fprintf(file, "segmento AB: %f\n",L[0]);
-    fprintf(file, "segmanto BC : %f\n",L[1]);
-    fprintf(file, "segmanto CA : %f\n",L[2]);
-    fprintf(file, "angolo alfa : %f\n",A[0]);
-    fprintf(file, "angolo beta : %f\n",A[1]);
-    fprintf(file, "angolo gamma: %f\n",A[2]);
-    fprintf(file, "perimetro : %f\n",perimetro);
-    fprintf(file, "area : %f\n",area);
+    fprintf(file, "segmento AB: %.3f\n",L[0]);
+    fprintf(file, "segmanto BC : %.3f\n",L[1]);
+    fprintf(file, "segmanto CA : %.3f\n",L[2]);
+    fprintf(file, "angolo alfa : %.3f\n",A[0]);
+    fprintf(file, "angolo beta : %.3f\n",A[1]);
+    fprintf(file, "angolo gamma: %.3f\n",A[2]);
+    fprintf(file, "perimetro : %.3f\n",perimetro);
+    fprintf(file, "area : %.3f\n",area);
     printf("dati salvati su file\n");
     return 0;
 }
