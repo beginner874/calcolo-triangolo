@@ -1,8 +1,8 @@
-segmento AB: 10.000000
-segmanto BC : 10.000000
-segmanto CA : 10.000000
-angolo alfa : 60.000000
-angolo beta : 60.000000
-angolo gamma: 60.000000
-perimetro : 30.000000
-area : 43.301270
+segmento AB: 9.000
+segmanto BC : 12.000
+segmanto CA : 15.000
+angolo alfa : 36.870
+angolo beta : 53.130
+angolo gamma: 90.000
+perimetro : 36.000
+area : 54.000

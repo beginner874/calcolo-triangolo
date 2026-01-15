@@ -32,36 +32,34 @@ int main () {
             i+=3;
         }
     }
-    if (control(L)) {
-        A[0]=acos( ( pow(L[1],2) + pow(L[2],2) - pow(L[0],2) ) / (2*L[1]*L[2]) );
-        A[1]=acos( ( pow(L[0],2) + pow(L[2],2) - pow(L[1],2) ) / (2*L[0]*L[2]) );
-        A[2]=acos( ( pow(L[0],2) + pow(L[1],2) - pow(L[2],2) ) / (2*L[0]*L[1]) );
-        A[0]=A[0]*180/3.1415926;
-        A[1]=A[1]*180/3.1415926;
-        A[2]=A[2]*180/3.1415926;
-        perimetro=L[0]+L[1]+L[2];
-        area=sqrt((perimetro/2) * ((perimetro/2) - L[0]) * ((perimetro/2) - L[1]) * ((perimetro/2) - L[2]));
-        if (A[0]==A[1]||A[0]==A[2]||A[1]==A[2]) {
-            printf("è un triangolo isoscele\n");
-            if (A[0]==90||A[1]==90||A[2]==90) {
-                printf("è anche un triangolo rettangolo\n");
-            }
+    A[0]=acos( ( pow(L[1],2) + pow(L[2],2) - pow(L[0],2) ) / (2*L[1]*L[2]) );
+    A[1]=acos( ( pow(L[0],2) + pow(L[2],2) - pow(L[1],2) ) / (2*L[0]*L[2]) );
+    A[2]=acos( ( pow(L[0],2) + pow(L[1],2) - pow(L[2],2) ) / (2*L[0]*L[1]) );
+    A[0]=A[0]*180/3.1415926;
+    A[1]=A[1]*180/3.1415926;
+    A[2]=A[2]*180/3.1415926;
+    perimetro=L[0]+L[1]+L[2];
+    area=sqrt((perimetro/2) * ((perimetro/2) - L[0]) * ((perimetro/2) - L[1]) * ((perimetro/2) - L[2]));
+    if (A[0]==A[1]||A[0]==A[2]||A[1]==A[2]) {
+        printf("è un triangolo isoscele\n");
+        if (A[0]==90||A[1]==90||A[2]==90) {
+            printf("è anche un triangolo rettangolo\n");
         }
-        else if (A[0]==A[1]&&A[0]==A[2]&&A[1]==A[2]) {
-            printf("è un triangolo equilatero\n");
-        }
-        else {
-            printf("è un triangolo scaleno\n");
-            if (A[0]==90||A[1]==90||A[2]==90) {
-                printf("è anche un triangolo rettangolo\n");
-            }
-        }
-        printf("angolo alfa è: %.3f\n",A[0]);
-        printf("angolo beta è: %.3f\n",A[1]);
-        printf("angolo gamma è: %.3f\n",A[2]);
-        printf("il perimetro del triangolo è: %.3f\n",perimetro);
-        printf("l'area del triangolo è: %.3f\n",area);
     }
+    else if (A[0]==A[1]&&A[0]==A[2]&&A[1]==A[2]) {
+        printf("è un triangolo equilatero\n");
+    }
+    else {
+        printf("è un triangolo scaleno\n");
+        if (A[0]==90||A[1]==90||A[2]==90) {
+            printf("è anche un triangolo rettangolo\n");
+        }
+    }
+    printf("angolo alfa è: %.3f\n",A[0]);
+    printf("angolo beta è: %.3f\n",A[1]);
+    printf("angolo gamma è: %.3f\n",A[2]);
+    printf("il perimetro del triangolo è: %.3f\n",perimetro);
+    printf("l'area del triangolo è: %.3f\n",area);
     file = fopen("dati.txt", "w");
     fprintf(file, "segmento AB: %.3f\n",L[0]);
     fprintf(file, "segmanto BC : %.3f\n",L[1]);
