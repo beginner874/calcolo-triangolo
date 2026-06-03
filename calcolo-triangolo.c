@@ -60,7 +60,7 @@ int main () {
     printf("angolo gamma è: %.3f\n",A[2]);
     printf("il perimetro del triangolo è: %.3f\n",perimetro);
     printf("l'area del triangolo è: %.3f\n",area);
-    file = fopen("dati.txt", "w");
+    file = fopen("dati-c.txt", "w");
     fprintf(file, "segmento AB: %.3f\n",L[0]);
     fprintf(file, "segmanto BC : %.3f\n",L[1]);
     fprintf(file, "segmanto CA : %.3f\n",L[2]);
