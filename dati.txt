@@ -1,6 +1,6 @@
 segmento AB: 3.000
-segmento BC : 4.000
-segmento CA : 5.000
+segmanto BC : 4.000
+segmanto CA : 5.000
 angolo alfa : 36.870
 angolo beta : 53.130
 angolo gamma: 90.000

@@ -4,62 +4,52 @@ def control(L):
         return 1
     else:
         return 0
-def main():
-    L = [0.0, 0.0, 0.0]
-    A = [0.0, 0.0, 0.0]
-    tentativi = 3
-    i = 1
-    valido = False
-    while i <= tentativi:
-        print("inserisci i dati del triangolo")
-        try:
-            L[0] = float(input("segmento AB\n"))
-            L[1] = float(input("segmento BC\n"))
-            L[2] = float(input("segmento CA\n"))
-        except ValueError:
-            print("Per favore, inserisci un numero valido.")
-            continue
-        if not control(L):
-            print("i dati inseriti non possono formare un triangolo, riprova. hai ancora {tentativi - i}° tentativi")
-            if i >= tentativi:
-                print("non sai la regola di un triangolo sei una capra")
-                return
-            i += 1
-        else:
-            valido = True
-            break      
-    if not valido:
-        return
-    A[0] = math.degrees(math.acos((L[1]**2 + L[2]**2 - L[0]**2) / (2 * L[1] * L[2])))
-    A[1] = math.degrees(math.acos((L[0]**2 + L[2]**2 - L[1]**2) / (2 * L[0] * L[2])))
-    A[2] = math.degrees(math.acos((L[0]**2 + L[1]**2 - L[2]**2) / (2 * L[0] * L[1])))
-    perimetro = L[0] + L[1] + L[2]
-    semiperimetro = perimetro / 2
-    area = math.sqrt(semiperimetro * (semiperimetro - L[0]) * (semiperimetro - L[1]) * (semiperimetro - L[2]))
-    if L[0] == L[1] == L[2]:
-        print("è un triangolo equilatero")
-    elif L[0] == L[1] or L[0] == L[2] or L[1] == L[2]:
-        print("è un triangolo isoscele")
-        if 90.0 in L:
-            print("è anche un triangolo rettangolo")
+L = [0.0, 0.0, 0.0]
+A = [0.0, 0.0, 0.0]
+tentativo=4
+for i in range (1,tentativo):
+    print("inserisci i dati del triangolo")
+    L[0] = float(input("segmento AB\n"))
+    L[1] = float(input("segmento BC\n"))
+    L[2] = float(input("segmento CA\n"))
+    if control(L) == 0:
+        print(f"i dati inseriti non possono formare un triangolo, riprova. hai ancora {3 - i}° tentativi")
+        if i >= 3:
+            print("non sai la regola di un triangolo sei una capra")
+            exit()
     else:
-        print("è un triangolo scaleno")
-        if 90.0 in L:
-            print("è anche un triangolo rettangolo")
-    print(f"angolo alfa è: {A[0]:.3f}")
-    print(f"angolo beta è: {A[1]:.3f}")
-    print(f"angolo gamma è: {A[2]:.3f}")
-    print(f"il perimetro del triangolo è: {perimetro:.3f}")
-    print(f"l'area del triangolo è: {area:.3f}")
-    with open("dati-python.txt", "w") as file:
-        file.write(f"segmento AB: {L[0]:.3f}\n")
-        file.write(f"segmento BC : {L[1]:.3f}\n")
-        file.write(f"segmento CA : {L[2]:.3f}\n")
-        file.write(f"angolo alfa : {A[0]:.3f}\n")
-        file.write(f"angolo beta : {A[1]:.3f}\n")
-        file.write(f"angolo gamma: {A[2]:.3f}\n")
-        file.write(f"perimetro : {perimetro:.3f}\n")
-        file.write(f"area : {area:.3f}\n")  
-    print("dati salvati su file")
-if __name__ == "__main__":
-    main()
+        break
+A[0] = math.acos((L[1]**2 + L[2]**2 - L[0]**2) / (2 * L[1] * L[2]))
+A[1] = math.acos((L[0]**2 + L[2]**2 - L[1]**2) / (2 * L[0] * L[2]))
+A[2] = math.acos((L[0]**2 + L[1]**2 - L[2]**2) / (2 * L[0] * L[1]))
+A[0] = A[0] * 180 / math.pi
+A[1] = A[1] * 180 / math.pi
+A[2] = A[2] * 180 / math.pi
+perimetro = L[0] + L[1] + L[2]
+semiperimetro = perimetro / 2
+area = math.sqrt(semiperimetro * (semiperimetro - L[0]) * (semiperimetro - L[1]) * (semiperimetro - L[2]))
+if A[0] == A[1] == A[2]:
+    print("è un triangolo equilatero")
+elif A[0] == A[1] or A[0] == A[2] or A[1] == A[2]:
+    print("è un triangolo isoscele")
+    if 90.0 in A:
+        print("è anche un triangolo rettangolo")
+else:
+    print("è un triangolo scaleno")
+    if 90.0 in A:
+        print("è anche un triangolo rettangolo")
+print(f"angolo alfa è: {A[0]:.3f}")
+print(f"angolo beta è: {A[1]:.3f}")
+print(f"angolo gamma è: {A[2]:.3f}")
+print(f"il perimetro del triangolo è: {perimetro:.3f}")
+print(f"l'area del triangolo è: {area:.3f}")
+with open("dati-c.txt", "w") as file:
+    file.write(f"segmento AB: {L[0]:.3f}\n")
+    file.write(f"segmanto BC : {L[1]:.3f}\n")
+    file.write(f"segmanto CA : {L[2]:.3f}\n")
+    file.write(f"angolo alfa : {A[0]:.3f}\n")
+    file.write(f"angolo beta : {A[1]:.3f}\n")
+    file.write(f"angolo gamma: {A[2]:.3f}\n")
+    file.write(f"perimetro : {perimetro:.3f}\n")
+    file.write(f"area : {area:.3f}\n")
+print("dati salvati su file")
